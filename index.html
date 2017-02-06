@@ -56,6 +56,60 @@
       </g>
     </svg>
   </p>
+
+  <h2>3</h2>
+  <p>
+    <svg width="200" height="200">
+      <defs>
+        <!--
+          PATH DATA GENERATED WITH THE FOLLOWING JS SCRIPT:
+
+          const POINTS = 7; // Number of branches in the star
+          const INTERVAL = 2; // Interval between branches (1 for a regular polygon)
+          let path = "M 100 0 L"; // Array that will hold the SVG path
+          for (let i=1; i<=POINTS; i++) {
+            let angle = i * INTERVAL * 2 * Math.PI / POINTS;
+            let x = Math.cos(angle);
+            let y = Math.sin(angle);
+            path += '\n' + x + ' ' + y;
+          }
+          console.log(path + ' Z');
+        -->
+        <path id="heptagram"
+              d="M 100 0 L -22,97 -90,-43 62,-78 62,78 -90,43 -22,-97 100,0 Z"
+              stroke-width="12"
+              stroke="#BAE" fill="none">
+      </defs>
+      <style>
+        #motto text {
+          font-family: sans-serif;
+          font-size: 15px;
+          font-weight: bold;
+        }
+      </style>
+      <g id="LGBT-flag">
+        <rect fill="#750787" height="200" width="200"/>
+        <rect fill="#004DFF" height="166" width="200"/>
+        <rect fill="#008026" height="133" width="200"/>
+        <rect fill="#FFED00" height="100" width="200"/>
+        <rect fill="#FF8C00" height="66" width="200"/>
+        <rect fill="#E40303" height="33" width="200"/>
+      </g>
+      <use xlink:href="#heptagram" transform="translate(100 100) scale(1)" />
+      <use xlink:href="#heptagram" transform="translate(100 100) scale(.5)" />
+      <use xlink:href="#heptagram" transform="translate(100 100) scale(.25)" />
+      <g id="motto">
+        <text transform="translate(100 100) scale(1)"
+                dominant-baseline="middle">
+          <textPath xlink:href="#heptagram" startOffset="50%">
+            ESSE ET VIDERI
+            <animate attributeType="XML" attributeName="startOffset" from="0%" to="100%"
+                      dur="15s" repeatCount="indefinite"/>
+          </textPath>
+        </text>
+      </g>
+    </svg>
+  </p>
 </body>
 
 </html>
