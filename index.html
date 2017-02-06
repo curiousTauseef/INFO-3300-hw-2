@@ -15,14 +15,45 @@
   <p>
     <svg width="200" height="200">
       <style>
-      text {
+      #ex1-text {
         font-family: Palatino, Garamond, 'Linux Libertine';
         font-size: 30px;
         text-shadow: grey 2px 2px 3px;
       }
       </style>
       <circle fill="green" cx="100" cy="100" r="5" />
-      <text text-anchor="middle" dominant-baseline="middle" x="100" y="100">Cornell</text>
+      <text id="ex1-text" text-anchor="middle" dominant-baseline="middle" x="100" y="100">Cornell</text>
+    </svg>
+  </p>
+
+  <h2>2</h2>
+  <p>
+    <svg width="200" height="200" viewBox="-20 -50 270 270">
+      <defs>
+        <circle cx="0" cy="0" r="4" id="shape-A"/>
+        <rect x="-4" y="-4" width="8" height="8" id="shape-B"/>
+      </defs>
+      <g id="objects">
+        <!-- The numbers here are computed using:
+          x = floor( (x - min(x)) / range(x) * 200)
+          y = 200 - floor( (y - min(y)) / range(y) * 200)
+        -->
+        <use xlink:href="#shape-A" x="25"  y="193"/>
+        <use xlink:href="#shape-A" x="0"   y="200"/>
+        <use xlink:href="#shape-B" x="75"  y="165"/>
+        <use xlink:href="#shape-B" x="200" y="0"/>
+      </g>
+      <g id="scales">
+        <!-- X-axis -->
+        <line x1="0" x2="200" y1="200" y2="200" stroke="black"/>
+        <text text-anchor="middle" dominant-baseline="text-before-edge" x="100" y="200">A</text>
+        <!-- Y-axis -->
+        <line x1="0" x2="0" y1="0" y2="200" stroke="black"/>
+        <text text-anchor="end" dominant-baseline="middle" x="-3" y="100">C</text>
+      </g>
+      <g id="legends">
+        <text text-anchor="middle" x="100" y="-10">Title</text>
+      </g>
     </svg>
   </p>
 </body>
