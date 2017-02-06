@@ -117,6 +117,7 @@
     Mean: 6.76 |
     Mode: 7 |
     Standard deviation: 3.61 |
+    Probability that a randomly selected datapoint is equal to 4: ~ 17.6%
     <script>
       // Script that generates the needed values
       let samples = [4, 11, 6, 7, 3, 7, 2, 4, 15, 6, 7, 5, 4, 15, 7, 5, 7];
@@ -136,6 +137,8 @@
       let sorted = samples.slice().sort();
       let median = (sorted[Math.floor(sorted.length/2)] + sorted[Math.ceil(sorted.length/2)]) / 2;
       console.log('median', median);
+      let proba = samples.reduce((fours, value) => fours + (value === 4  ? 1 : 0), 0) / samples.length;
+      console.log('probability that a randomly selected datapoint is equal to 4', proba);
     </script>
     <svg width="300" height="200" style="display:block;">
       <g id="graph-bars">
